@@ -19,8 +19,11 @@ const createRequest = (options = {}) => {
       xhr.open("POST", options.URL);
       xhr.send(formData);
     }
-    options.collback(err, response);
-  } catch (e) {
-    callback(e);
+    options.callback(xhr.response);
+    console.log(xhr.response)
   }
+   catch (e) {
+    console.log
+    callback(e);
+    }
 };
