@@ -1,88 +1,51 @@
-/**
- * Основная функция для совершения запросов
- * на сервер.
- * */
-function createRequest(options) {}
+const createRequest = ({ url, method, data, callback }) => {
+  const xhr = new XMLHttpRequest();
+  xhr.responseType = 'json';
 
+  let formData = null;
 
+  if (method === 'GET') {
+    const params = new URLSearchParams(data).toString();
+    url = `${url}?${params}`;
+  } else {
+    formData = new FormData();
+    if (data) {
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
+    }
+  }
 
+  xhr.open(method, url);
 
+  xhr.onload = () => {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      callback(null, xhr.response);
+    } else {
+      callback(new Error(`Request failed with status ${xhr.status}`), null);
+    }
+  };
 
+  xhr.onerror = () => {
+    callback(new Error('Зарос не направлен, проверьте адрес запроса'), null);
+  };
 
-
-const data = {
-  url: '/user/current', // адрес
-  data: {
-    // произвольные данные, могут отсутствовать
-    email: 'ivan@poselok.ru',
-    password: 'odinodin',
-  },
-  method: 'GET', // метод запроса
-  /*
-  Функция, которая сработает после запроса.
-  Если в процессе запроса произойдёт ошибка, её объект
-  должен быть в параметре err.
-  Если в запросе есть данные, они должны быть переданы в response.
-  */
-  callback: (err, response) => {
-    console.log('Ошибка, если есть', err);
-    console.log('Данные, если нет ошибки', response);
-  },
+  try {
+    xhr.send(formData);
+  } catch (e) {
+    callback(e, null);
+  }
 };
 
-createRequest(data);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function createRequest(options) {
-//   const xhr = new XMLHttpRequest();
-
-//   xhr.open(options.method || 'GET', options.url);
-//   xhr.responseType = 'json';
-
-//   if (options.method === 'POST' || options.method === 'PUT') {
-//     const formData = new FormData();
-//     for (let key in options.data) {
-//       formData.append(key, options.data[key]);
-//     }
-//     xhr.send(formData);
-//   } else {
-//     const queryString = Object.keys(options.data)
-//       .map(key => `${key}=${options.data[key]}`)
-//       .join('&');
-//     xhr.send(queryString);
-//   }
-
-//   xhr.onreadystatechange = () => {
-//     if (xhr.readyState === XMLHttpRequest.DONE) {
-//       if (xhr.status === 200) {
-//         options.callback(null, xhr.response);
-//       } else {
-//         options.callback({
-//           status: xhr.status,
-//           statusText: xhr.statusText
-//         });
-//       }
-//     }
-//   };
-
-//   xhr.onerror = () => {
-//     options.callback({
-//       status: xhr.status,
-//       statusText: xhr.statusText
-//     });
-//   };
-// }
+// createRequest({
+//   url: 'user/login',
+//   method: 'POST',
+//   data: {
+//     email: '1@1.ru',
+//     password: '1234',
+//   },
+//   callback: (err, response) => {
+//     console.log(err, 'e');
+//     console.log(response, 'r');
+//   },
+// });

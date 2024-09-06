@@ -5,6 +5,42 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "name": "Vlad",
+      "email": "test@test.ru",
+      "password": "abracadabra",
+      "id": "609pb124km0qi40c1"
+    },
+    {
+      "name": "dima",
+      "email": "d@d.ru",
+      "password": "test",
+      "id": "609pb128wm0qia310"
+    },
+    {
+      "name": "dima1",
+      "email": "d1@d.ru",
+      "password": "test",
+      "id": "609pb12cpm0qievgh"
+    },
+    {
+      "name": "dima2",
+      "email": "d2@d.ru",
+      "password": "test",
+      "id": "609pb12ibm0qiky93"
+    },
+    {
+      "name": "dima3",
+      "email": "d3@d.ru",
+      "password": "test",
+      "id": "609pb12t0m0qiycxj"
+    },
+    {
+      "name": "dima4",
+      "email": "d4@d.ru",
+      "password": "test",
+      "id": "609pb1322m0qkpzpx"
     }
   ],
   "accounts": [
