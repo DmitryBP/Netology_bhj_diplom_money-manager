@@ -36,7 +36,7 @@ class User {
     createRequest({
       url: this.URL + '/login',
       method: 'POST',
-      data,
+      data: data,
       callback: (err, response) => {
         if (response && response.user) {
           this.setCurrent(response.user);

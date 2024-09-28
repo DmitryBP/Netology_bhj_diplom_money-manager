@@ -17,7 +17,6 @@ const createRequest = ({ url, method, data, callback }) => {
   }
 
   xhr.open(method, url);
-
   xhr.onload = () => {
     if (xhr.status >= 200 && xhr.status < 300) {
       callback(null, xhr.response);
@@ -38,12 +37,20 @@ const createRequest = ({ url, method, data, callback }) => {
 };
 
 // createRequest({
-//   url: 'user/login',
-//   method: 'POST',
+//   url: 'transaction',
+//   method: 'GET',
 //   data: {
-//     email: '1@1.ru',
-//     password: '1234',
+//     account_id: '1',
 //   },
+//   callback: (err, response) => {
+//     console.log(err, 'e');
+//     console.log(response, 'r');
+//   },
+// });
+
+// createRequest({
+//   url: 'account',
+//   method: 'GET',
 //   callback: (err, response) => {
 //     console.log(err, 'e');
 //     console.log(response, 'r');

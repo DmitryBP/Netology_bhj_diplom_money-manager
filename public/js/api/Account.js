@@ -11,6 +11,8 @@ class Account extends Entity {
   }
 }
 
-// Account.get( 1, (err, res) => {
-//   console.log(err, res);
+
+
+// Account.get(1, (err, res) => {
+//   console.log(res);
 // })
