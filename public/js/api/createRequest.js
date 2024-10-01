@@ -1,29 +1,37 @@
-/**
- * Основная функция для совершения запросов
- * на сервер.
- * */
-const createRequest = (options = {}) => {
+const createRequest = ({ url, method, data, callback }) => {
   const xhr = new XMLHttpRequest();
-  try {
-    if (options.method == "GET") {
-      xhr.open(
-        "GET",
-        `${options.URL}?mail=${options.data.mail}&password=${options.data.password}`
-      );
-      xhr.send();
-    } else {
-      formData = new FormData();
-      xhr.responseType = "json";
-      formData.append("mail", options.data.mail);
-      formData.append("password", options.data.password);
-      xhr.open("POST", options.URL);
-      xhr.send(formData);
+  xhr.responseType = 'json';
+
+  let formData = null;
+
+  if (method === 'GET') {
+    const params = new URLSearchParams(data).toString();
+    url = `${url}?${params}`;
+  } else {
+    formData = new FormData();
+    if (data) {
+      Object.keys(data).forEach((key) => {
+        formData.append(key, data[key]);
+      });
     }
-    options.callback(xhr.response);
-    console.log(xhr.response)
   }
-   catch (e) {
-    console.log
-    callback(e);
+
+  xhr.open(method, url);
+  xhr.onload = () => {
+    if (xhr.status >= 200 && xhr.status < 300) {
+      callback(null, xhr.response);
+    } else {
+      callback(new Error(`Request failed with status ${xhr.status}`), null);
     }
+  };
+
+  xhr.onerror = () => {
+    callback(new Error('Зарос не направлен, проверьте адрес запроса'), null);
+  };
+
+  try {
+    xhr.send(formData);
+  } catch (e) {
+    callback(e, null);
+  }
 };
