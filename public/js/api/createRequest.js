@@ -47,12 +47,3 @@ const createRequest = ({ url, method, data, callback }) => {
 //     console.log(response, 'r');
 //   },
 // });
-
-// createRequest({
-//   url: 'account',
-//   method: 'GET',
-//   callback: (err, response) => {
-//     console.log(err, 'e');
-//     console.log(response, 'r');
-//   },
-// });
