@@ -5,8 +5,6 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
-<<<<<<< HEAD
-=======
     },
     {
       "name": "Vlad",
@@ -43,7 +41,6 @@
       "email": "d4@d.ru",
       "password": "test",
       "id": "609pb1322m0qkpzpx"
->>>>>>> solution2024
     }
   ],
   "accounts": [
@@ -61,14 +58,11 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
-<<<<<<< HEAD
-=======
     },
     {
       "name": "test",
       "user_id": "1",
       "id": "609pc15zam1mj2fga"
->>>>>>> solution2024
     }
   ],
   "transactions": [
@@ -82,27 +76,6 @@
       "user_id": "1"
     },
     {
-<<<<<<< HEAD
-      "account_id": "1",
-      "created_at": "2019-09-17 15:53:02",
-      "id": "2",
-      "name": "Баланс на дебетовке",
-      "sum": 3200,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "1",
-      "created_at": "2019-09-19 20:12:02",
-      "id": "3",
-      "name": "Копилка",
-      "sum": 1500,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-=======
->>>>>>> solution2024
       "account_id": "2",
       "created_at": "2019-09-26 16:23:02",
       "id": "4",
@@ -122,18 +95,6 @@
     },
     {
       "account_id": "2",
-<<<<<<< HEAD
-      "created_at": "2019-09-25 15:03:02",
-      "id": "17",
-      "name": "Овощи",
-      "sum": 300,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
-=======
->>>>>>> solution2024
       "created_at": "2019-09-26 14:47:02",
       "id": "6",
       "name": "Мясо",
@@ -142,18 +103,6 @@
       "user_id": "1"
     },
     {
-<<<<<<< HEAD
-      "account_id": "2",
-      "created_at": "2019-09-27 13:27:02",
-      "id": "7",
-      "name": "Долг в банк",
-      "sum": 5000,
-      "type": "expense",
-      "user_id": "1"
-    },
-    {
-=======
->>>>>>> solution2024
       "account_id": "3",
       "created_at": "2017-10-15 13:27:02",
       "id": "9",
@@ -190,33 +139,6 @@
       "user_id": "1"
     },
     {
-<<<<<<< HEAD
-      "account_id": "3",
-      "created_at": "2018-01-15 13:27:02",
-      "id": "13",
-      "name": "Подарок сизого",
-      "sum": 20000,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "3",
-      "created_at": "2017-09-15 13:27:02",
-      "id": "14",
-      "name": "На охрану",
-      "sum": 60000,
-      "type": "expense",
-      "user_id": "1"
-    },
-    {
-      "account_id": "3",
-      "created_at": "2017-10-15 13:27:02",
-      "id": "15",
-      "name": "На бумер",
-      "sum": 300000,
-      "type": "expense",
-      "user_id": "1"
-=======
       "id": "609pc15ykm1mj0lhs",
       "type": "income",
       "name": "ef",
@@ -701,7 +623,15 @@
       "account_id": "3",
       "user_id": "1",
       "created_at": "2024-10-01T16:40:31.762Z"
->>>>>>> solution2024
+    },
+    {
+      "id": "609pc1fpdm1qqc7aw",
+      "type": "expense",
+      "name": "test",
+      "sum": 123,
+      "account_id": "3",
+      "user_id": "1",
+      "created_at": "2024-10-01T17:45:52.375Z"
     }
   ]
 }
